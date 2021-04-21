@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LoginPage</title>
+<style>
+div{
+    width:400px;
+    height:400px;
+    padding:80px;
+    margin:auto;
+       margin-top:30px;
+       border-radius:30px;
+       background:rgb(54, 231, 83)
+}
+</style>
+</head>
+<body bgcolor="yellow"> 
+<center/>
+<div id="">
+ <h1 style="color:rgb(185, 16, 157)">LoginPage</h1>
+ <br/>
+ <form action onsubmit="login()">
+     
+ <label for="name">Enter the Name</label>
+ 
+ <input type="text" name="name" id="name" placeholder="Enter the name"><br/>
+ <br/>
+ 
+ <label for="mobile">Enter the MobileNumber</label>
+ 
+ <input type="number" name="mobile" id="mobile"><br/>
+ <br/>
+  <label for="password">Enter the Password</label>
+  
+ <input type="password" name="password" id="password"><br/>
+ <br/>
+ <button type="Submit">Submit</button>
+ <button type="Reset">Reset</button>
+ <button type="button" onclick="hello()">Click Me</button>
+</div>
+</form>
+<script>
+    function login()
+    {
+        event.preventDefault();
+        alert("Login Button Clicked");
+        let password=document.querySelector("#password").value;
+        let mobile=document.querySelector("#mobile").value;
+        alert("mobile Number:"+mobile);
+        if(mobile.length==10 && password.length>8)
+        {
+            alert("Login Success");
+             window.location.href="cabbooking.html";
+        }
+        else
+        {
+            alert("Invalid Login Credentials");
+        }
+
+
+    }
+    function hello()
+    {
+    alert("Hello");
+}
+</script>
+ </body>
+</html> 

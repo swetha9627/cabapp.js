@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Booking Date</title>
+<style>
+    div
+    {
+        width:400px;
+    height:400px;
+    padding:80px;
+    margin:auto;
+       margin-top:30px;
+       border-radius:30px;
+       background:rgb(38, 196, 207)
+    }
+</style>
+</head>
+<body bgcolor="yellow">
+<center/>
+<div id="">
+<h2 style="color:rgb(255, 0, 0)">Booking Date&Time</h2>
+<form action onsubmit="login()">
+<label>Journey Date</label>
+<input type="date" name="journeydate">
+<br/><br/>
+<label>JourneyTiming</label>
+<input type="time" name="pickuptime">
+<br/><br/>
+<input type="checkbox" name="senoircitizen" id="senoir" onchange="priority()">Senior Citizen
+<br/><br/>
+<label>Gender</label>
+<input type="radio" name="gender" value="m">Male
+<input type="radio" name="gender" value="f">Female
+<br/><br/>
+<button type="button" onclick="login()">Submit</button>
+<h3>Instruction</h3>
+<li>Should Wear Mask</li>
+<li>Keep Hand Sanitizer</li>
+<center/><h2 style="color:brown">----Cab Booked Successfully---- </h2>
+</div>
+</form>
+<script>
+    function priority()
+    {
+        
+        alert("You Selected senior citizen")
+        
+    }
+    function login()
+    {
+        window.location.href="cabkm.html";
+    }
+        
+</script>
+
+</body>
+</html>

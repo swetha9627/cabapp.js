@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CabBill</title>
+<style>
+        div
+        {
+        width:400px;
+        height:400px;
+        padding:80px;
+        margin:auto;
+           margin-top:30px;
+           border-radius:30px;
+           background:rgb(128, 207, 38)
+        }
+    </style>
+</head>
+<body bgcolor="yellow">
+<center/>
+<div id="">
+<h1 style="color:rgb(255, 0, 0)">CarTypes</h1>
+<table border="9">
+<thead>
+<tr><th>Type</th> <th>Price Per KM</th></tr>
+</thead>
+<tbody>
+<tr><td>Micro</td><td>Rs15 Per KM</td></tr>
+<tr><td>Mini</td><td>Rs20 Per KM</td></tr>
+<tr><td>Prime</td><td>Rs30 Per KM</td></tr>
+</tbody>
+</table>
+<h3 style="color:rgb(13, 15, 141)">CabBill</h3>
+<form>
+<label>Select CabType:</label>
+<select name="cabtype" id="cabtype"required>
+<option>---Select cab Types--</option>
+<option value="Micro">Micro</option>
+<option value="Mini">Mini</option>
+<option value="Prime">Prime</option>
+</select>
+<br/><br/>
+<label> Enter the Kms:</label>
+<input type="number" id="km" placeholder="Enter the kms" required>
+<br/><br/>
+<label>Gst %</label>
+<input type="number" value="7" readonly><br/><br/>
+<label for="type" id="amount"></label><br/><br/>
+<label for="dis" id="gst"></label><br/><br/>
+<label for="display" id="bill"></label><br/><br/>
+<button type="button" onclick="calc()">Total</button>
+<button>Submit</button>
+<br/><br/>
+<label for="status" id="bstatus">
+</label>
+</div>
+</form>
+<script>
+    function calc()
+    {   
+        let total=0;
+        let cab=document.querySelector("#cabtype").value;//calling cabtype id for calculate amount
+        let kilo=document.querySelector("#km").value;//calling km for getting per km price specified car type
+    
+        if(cab=="Micro")
+        {   
+            total=kilo*15;
+    
+        }                                       //checking conditions to calculate amount for specified cartype
+        if(cab=="Mini")
+        {
+            total=kilo*20;
+
+        }
+        if(cab=="Prime")
+        {
+            total=kilo*30;
+        }
+        let amount=total*0.07;
+        Gst=amount+total;
+        document.getElementById('amount').innerHTML="Total Amount is:"+total;//Getting calculation of kilometer amount with price
+     document.getElementById('gst').innerHTML="Gst Amount is:"+Math.round(amount);//calculating Gst amount 7% with total
+     document.getElementById('bill').innerHTML="Total Amount with Gst is:"+Math.round(Gst);//getting total amount plus gst value
+     document.getElementById('bstatus').innerHTML="---THANK YOU FOR BOOKING US---";
+    }
+
+    
+</script>
+</body>
+</html>

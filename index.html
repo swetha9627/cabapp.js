@@ -2,15 +2,64 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Files</title>
+<title>LoginPage</title>
+<style>
+div{
+    width:400px;
+    height:400px;
+    padding:80px;
+    margin:auto;
+       margin-top:30px;
+       border-radius:30px;
+       background:rgb(54, 231, 83)
+}
+</style>
 </head>
-<body>
-<h3>FileName</h3>
-<a href="login.html" target="_blank">LoginPage</a>
-<br/>
-<a href="Cabbooking.html"  target="_blank">Cabbooking</a>
-<br/>
-  <a href="cabKm.html"  target="_blank">CabKm</a>
-  <br/>
-</body>
-</html>
+<body bgcolor="yellow"> 
+<center/>
+<div id="">
+ <h1 style="color:rgb(185, 16, 157)">LoginPage</h1>
+ <br/>
+ <form action onsubmit="login()">
+     
+ <label for="name">Enter the Name</label>
+ 
+ <input type="text" name="name" id="name" placeholder="Enter the name"><br/>
+ <br/>
+ 
+ <label for="mobile">Enter the MobileNumber</label>
+ 
+ <input type="number" name="mobile" id="mobile" placeholder="Enter 10 Digit MobileNumber"><br/>
+ <br/>
+  <label for="password">Enter the Password</label>
+  
+ <input type="password" name="password" id="password"><br/>
+ <br/>
+ <button type="Submit">Submit</button>
+ <button type="Reset">Reset</button>
+</div>
+</form>
+<script>
+    function login()
+    {
+        event.preventDefault();
+        alert("Login Button Clicked");
+        let password=document.querySelector("#password").value;//Getting from input type
+        let mobile=document.querySelector("#mobile").value;
+        alert("mobile Number:"+mobile);
+        if(mobile.length==10 && password.length>8)//Checking Mobile Number & PassWord valid or Not
+        {
+            alert("Login Success");//Valid Means Alert Perform Login Confirmation
+             window.location.href="cabbooking.html";//To Go Next Page And Selecting Path
+        }
+        else
+        {
+            alert("Invalid Login Credentials");
+        }
+
+
+    }
+
+</script>
+ </body>
+</html> 
